@@ -1,0 +1,64 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="create_table_company_20231507" author="Zurnachyan Valeriy" failOnError="true">
+        <createTable tableName="T_DEVELOPER_COMPANY">
+            <column name="C_ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="C_NAME" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="create_table_phone_20231507" author="Zurnachyan Valeriy" failOnError="true">
+        <createTable tableName="T_PHONE">
+            <column name="C_ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="C_MODEL" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FK_COMPANY_ID" type="int">
+                <constraints foreignKeyName="FK_PHONE_TO_DEVELOPER_COMPANY" nullable="false"
+                             referencedTableName="T_DEVELOPER_COMPANY" referencedColumnNames="C_ID"
+                             initiallyDeferred="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="create_table_watch_20231507" author="Zurnachyan Valeriy" failOnError="true">
+        <createTable tableName="T_WATCH">
+            <column name="C_ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="C_MODEL" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FK_COMPANY_ID" type="int">
+                <constraints foreignKeyName="FK_WATCH_TO_DEVELOPER_COMPANY" nullable="false"
+                             referencedTableName="T_DEVELOPER_COMPANY" referencedColumnNames="C_ID"
+                             initiallyDeferred="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="create_table_headphones_20231507" author="Zurnachyan Valeriy" failOnError="true">
+        <createTable tableName="T_HEADPHONES">
+            <column name="C_ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="C_MODEL" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FK_COMPANY_ID" type="int">
+                <constraints foreignKeyName="FK_HEADPHONES_TO_DEVELOPER_COMPANY" nullable="false"
+                             referencedTableName="T_DEVELOPER_COMPANY" referencedColumnNames="C_ID"
+                             initiallyDeferred="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

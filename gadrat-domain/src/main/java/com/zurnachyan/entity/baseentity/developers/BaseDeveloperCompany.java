@@ -1,6 +1,5 @@
 package com.zurnachyan.entity.baseentity.developers;
 
-import com.zurnachyan.entity.abstractentity.AbstractDeveloperCompany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,11 +12,15 @@ import javax.persistence.Id;
 @Data
 @Entity
 @NoArgsConstructor
-public class BaseDeveloperCompany extends AbstractDeveloperCompany {
-
+public class BaseDeveloperCompany {
     /**
-     * Developer`s ID
+     * Company`s ID
      */
     @Id
     private long id;
+
+    /**
+     * Company`s name
+     */
+    private String name;
 }
