@@ -1,6 +1,7 @@
 package com.zurnachyan.entity.abstractentity;
 
 import com.zurnachyan.entity.baseentity.developers.BaseDeveloperCompany;
+import com.zurnachyan.enums.GadgetType;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -30,4 +31,10 @@ public abstract class AbstractGadget {
      */
     @Column
     private String model;
+
+    /**
+     * Gadget type
+     */
+    @Column
+    protected GadgetType type;
 }
