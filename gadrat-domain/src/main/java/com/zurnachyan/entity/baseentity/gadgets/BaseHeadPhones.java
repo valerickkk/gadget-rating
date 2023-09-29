@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Base headphones
@@ -14,6 +15,7 @@ import javax.persistence.Entity;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
+@Table(name = "t_headphones")
 @NoArgsConstructor
 public class BaseHeadPhones extends AbstractGadget {
 

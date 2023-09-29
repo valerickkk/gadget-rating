@@ -61,4 +61,25 @@
             </column>
         </createTable>
     </changeSet>
+    <changeSet id="add_type_column_to_phones" author="Zurnachyan Valeriy" failOnError="true">
+        <addColumn tableName="t_phone">
+            <column name="C_TYPE" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="add_type_column_to_headphones" author="Zurnachyan Valeriy" failOnError="true">
+        <addColumn tableName="t_headphones">
+            <column name="C_TYPE" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="add_type_column_to_watches" author="Zurnachyan Valeriy" failOnError="true">
+        <addColumn tableName="t_watch">
+            <column name="C_TYPE" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

@@ -1,12 +1,40 @@
 package com.zurnachyan.service;
 
+import com.zurnachyan.exception.EntityNotFoundException;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public class AbstractEntityService<C, I> {
+import java.util.List;
 
-    private JpaRepository<C, I> entityRepository;
+/**
+ * Abstract entity service for work with entities
+ * @param <C> entity type
+ */
+public abstract class AbstractEntityService<C> {
 
-    public C getById(I id) {
-        return entityRepository.getById(id);
+    /**
+     * Spring entity repository
+     */
+    protected JpaRepository<C, Long> entityRepository;
+
+    public AbstractEntityService(JpaRepository<C, Long> entityRepository) {
+        this.entityRepository = entityRepository;
+    }
+
+    /**
+     * Base method for finding entity by it`s id
+     * @param id entity id
+     * @return entity
+     */
+    public C getById(Long id) {
+        return entityRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Entity with id: " + id + "is not found."));
+    }
+
+    /**
+     * Base method for geting all entities of this type
+     * @return list of entities
+     */
+    public List<C> getAll() {
+        return entityRepository.findAll();
     }
 }

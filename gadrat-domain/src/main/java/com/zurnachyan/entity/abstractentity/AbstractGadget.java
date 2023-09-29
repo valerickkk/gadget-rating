@@ -18,23 +18,26 @@ public abstract class AbstractGadget {
      * Gadget`s id
      */
     @Id
+    @Column(name = "c_id")
     private long id;
 
     /**
      * Gadget`s developer company
      */
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "fk_company_id")
     private BaseDeveloperCompany company;
 
     /**
      * Gadget model
      */
-    @Column
+    @Column(name = "c_model")
     private String model;
 
     /**
      * Gadget type
      */
-    @Column
+    @Column(name = "c_type")
+    @Enumerated(EnumType.STRING)
     protected GadgetType type;
 }

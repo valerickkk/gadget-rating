@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Base watch
@@ -14,6 +15,7 @@ import javax.persistence.Entity;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
+@Table(name = "t_watch")
 @NoArgsConstructor
 public class BaseWatch extends AbstractGadget {
 
