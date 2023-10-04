@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/headphones")
+@RequestMapping("/grbcknd")
 public class HeadPhonesController {
 
     private final HeadPhonesService service;
@@ -19,12 +19,12 @@ public class HeadPhonesController {
         this.service = service;
     }
 
-    @GetMapping("/")
+    @GetMapping("/headphones")
     public List<BaseHeadPhones> getAllPhones() {
         return service.getAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/headphones/{id}")
     public BaseHeadPhones getById(@PathVariable Long id) {
         return service.getById(id);
     }

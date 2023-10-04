@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/watches")
+@RequestMapping("/grbcknd")
 public class WatchController {
 
     private final WatchService service;
@@ -19,12 +19,12 @@ public class WatchController {
         this.service = service;
     }
 
-    @GetMapping("/")
+    @GetMapping("/watches")
     public List<BaseWatch> getAllPhones() {
         return service.getAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/watches/{id}")
     public BaseWatch getById(@PathVariable Long id) {
         return service.getById(id);
     }
