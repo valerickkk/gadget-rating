@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Base phone
@@ -17,6 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "t_phone")
 @NoArgsConstructor
+@AssociationOverride(name = "images", joinColumns = @JoinColumn(name = "fk_phone_id"))
 public class BasePhone extends AbstractGadget {
 
     private GadgetType type = GadgetType.PHONE;

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create_table_t_image" author="Zurnachyan Valeriy" failOnError="true">
+        <createTable tableName="T_IMAGE">
+            <column name="C_ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="C_NAME" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="C_MAIN" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="C_CONTENT" type="blob">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FK_PHONE_ID" type="int">
+                <constraints foreignKeyName="FK_IMAGE_TO_PHONE" nullable="true"
+                             referencedTableName="T_PHONE" referencedColumnNames="C_ID"
+                             initiallyDeferred="true"/>
+            </column>
+            <column name="FK_HEADPHONES_ID" type="int">
+                <constraints foreignKeyName="FK_IMAGE_TO_HEADPHONES" nullable="true"
+                             referencedTableName="T_HEADPHONES" referencedColumnNames="C_ID"
+                             initiallyDeferred="true"/>
+            </column>
+            <column name="FK_WATCH_ID" type="int">
+                <constraints foreignKeyName="FK_IMAGE_TO_WATCH" nullable="true"
+                             referencedTableName="T_WATCH" referencedColumnNames="C_ID"
+                             initiallyDeferred="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
