@@ -12,6 +12,9 @@
             <column name="C_NAME" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
+            <column name="C_SIZE" type="int">
+                <constraints nullable="false"/>
+            </column>
             <column name="C_MAIN" type="boolean">
                 <constraints nullable="false"/>
             </column>
@@ -34,5 +37,40 @@
                              initiallyDeferred="true"/>
             </column>
         </createTable>
+    </changeSet>
+    <changeSet id="add_autoincrement_to_phone_id" author="Zurnachyan Valeriy">
+        <addAutoIncrement tableName="T_PHONE"
+                          columnName="C_ID"
+                          columnDataType="int"
+                          incrementBy="1"
+                          startWith="1" />
+    </changeSet>
+    <changeSet id="add_autoincrement_to_watch_id" author="Zurnachyan Valeriy">
+        <addAutoIncrement tableName="T_WATCH"
+                          columnName="C_ID"
+                          columnDataType="int"
+                          incrementBy="1"
+                          startWith="1" />
+    </changeSet>
+    <changeSet id="add_autoincrement_to_headphones_id" author="Zurnachyan Valeriy">
+        <addAutoIncrement tableName="T_HEADPHONES"
+                          columnName="C_ID"
+                          columnDataType="int"
+                          incrementBy="1"
+                          startWith="1" />
+    </changeSet>
+    <changeSet id="add_autoincrement_to_image_id" author="Zurnachyan Valeriy">
+        <addAutoIncrement tableName="T_IMAGE"
+                          columnName="C_ID"
+                          columnDataType="int"
+                          incrementBy="1"
+                          startWith="1" />
+    </changeSet>
+    <changeSet id="add_autoincrement_to_company_id" author="Zurnachyan Valeriy">
+        <addAutoIncrement tableName="T_DEVELOPER_COMPANY"
+                          columnName="C_ID"
+                          columnDataType="int"
+                          incrementBy="1"
+                          startWith="1" />
     </changeSet>
 </databaseChangeLog>

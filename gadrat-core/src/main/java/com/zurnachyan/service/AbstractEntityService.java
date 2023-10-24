@@ -37,4 +37,13 @@ public abstract class AbstractEntityService<C> {
     public List<C> getAll() {
         return entityRepository.findAll();
     }
+
+    /**
+     * Saves entity in database
+     * @param entity entity
+     * @return saved entity
+     */
+    protected C save(C entity) {
+        return entityRepository.save(entity);
+    }
 }

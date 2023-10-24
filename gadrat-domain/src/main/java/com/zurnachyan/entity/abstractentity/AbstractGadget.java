@@ -13,7 +13,6 @@ import java.util.List;
  * Abstract gadget
  */
 @Data
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @MappedSuperclass
 public abstract class AbstractGadget {
 
@@ -22,6 +21,7 @@ public abstract class AbstractGadget {
      */
     @Id
     @Column(name = "c_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     /**

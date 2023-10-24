@@ -11,10 +11,14 @@ public class Image {
 
     @Id
     @Column(name = "c_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "c_name")
     private String name;
+
+    @Column(name = "c_size")
+    private long size;
 
     @Column(name = "c_main")
     private boolean isMain;
