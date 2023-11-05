@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create_table_t_gadget_rating" author="Zurnachyan Valeriy" failOnError="true">
+        <createTable tableName="T_GADGET_RATING">
+            <column name="C_ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="C_GADGET_ID" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="C_TOTAL_VALUE" type="decimal">
+                <constraints nullable="false" checkConstraint="CHECK (C_TOTAL_VALUE &gt;= 0 AND C_TOTAL_VALUE &lt;= 10)" />
+            </column>
+            <column name="C_COMMUNITY_VALUE" type="decimal">
+                <constraints nullable="false" checkConstraint="CHECK (C_COMMUNITY_VALUE &gt;= 0 AND C_COMMUNITY_VALUE &lt;= 10)" />
+            </column>
+            <column name="C_PRICE_VALUE" type="decimal">
+                <constraints nullable="false" checkConstraint="CHECK (C_PRICE_VALUE &gt;= 0 AND C_PRICE_VALUE &lt;= 10)" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="create_table_t_user_estimate" author="Zurnachyan Valeriy" failOnError="true">
+        <createTable tableName="T_USER_ESTIMATE">
+            <column name="C_ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="C_GADGET_ID" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="C_VALUE" type="decimal">
+                <constraints nullable="false" checkConstraint="CHECK (C_VALUE &gt;= 0 AND C_VALUE &lt;= 10)" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="add_autoincrement_to_gadget_rating_id" author="Zurnachyan Valeriy">
+        <addAutoIncrement tableName="T_GADGET_RATING"
+                          columnName="C_ID"
+                          columnDataType="int"
+                          incrementBy="1"
+                          startWith="1" />
+    </changeSet>
+    <changeSet id="add_autoincrement_to_user_estimate_id" author="Zurnachyan Valeriy">
+        <addAutoIncrement tableName="T_USER_ESTIMATE"
+                          columnName="C_ID"
+                          columnDataType="int"
+                          incrementBy="1"
+                          startWith="1" />
+    </changeSet>
+</databaseChangeLog>

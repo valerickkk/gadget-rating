@@ -9,4 +9,22 @@
     <artifactId>gr-ratings-api</artifactId>
     <name>Archetype - gr-ratings-api</name>
     <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zurnachyan</groupId>
+            <artifactId>gr-ratings-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+    </dependencies>
 </project>
