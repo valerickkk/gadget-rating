@@ -1,15 +1,13 @@
 package com.zurnachyan.gadrat.enums;
 
-import org.springframework.security.core.GrantedAuthority;
-
-public enum UserRole implements GrantedAuthority {
+public enum UserRole /*implements GrantedAuthority*/ {
 
     USER,
 
     ADMIN;
 
-    @Override
-    public String getAuthority() {
-        return name();
-    }
+//    @Override
+//    public String getAuthority() {
+//        return name();
+//    }
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/grbcknd/companies")
+@RequestMapping("/core/companies")
 @CrossOrigin("http://localhost:3000/")
 public class CompanyController {
 

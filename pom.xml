@@ -11,6 +11,7 @@
     <modules>
         <module>gadrat-core</module>
         <module>gadrat-ratings</module>
+        <module>gadrat-gateway</module>
     </modules>
 
 </project>

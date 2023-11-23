@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/grbcknd/gadgets")
+@RequestMapping("/core/gadgets")
 @CrossOrigin("http://localhost:3000/")
 public class GadgetController {
 

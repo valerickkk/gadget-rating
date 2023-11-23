@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/grbcknd")
+@RequestMapping("/core")
 public class WatchController {
 
     private final WatchService service;
