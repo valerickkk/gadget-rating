@@ -2,7 +2,7 @@ package com.zurnachyan.gadrat.entity.abstractentity;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Abstract class for images
