@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create_table_t_user" author="Zurnachyan Valeriy" failOnError="true">
+        <createTable tableName="T_USER">
+            <column name="C_ID" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="C_USERNAME" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="C_EMAIL" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="C_PASSWORD" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="C_FIRST_NAME" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="C_LAST_NAME" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="C_ACTIVE" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="C_BLOCKED" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FK_IMAGE_ID" type="int">
+                <constraints foreignKeyName="FK_USER_TO_USER_IMAGE" nullable="true"
+                             referencedTableName="T_USER_IMAGE" referencedColumnNames="C_ID"
+                             initiallyDeferred="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="add_autoincrement_to_user_id" author="Zurnachyan Valeriy">
+        <addAutoIncrement tableName="T_USER"
+                          columnName="C_ID"
+                          columnDataType="int"
+                          incrementBy="1"
+                          startWith="1" />
+    </changeSet>
+    <changeSet id="create_table_t_user_roles" author="Zurnachyan Valeriy" failOnError="true">
+        <createTable tableName="T_USER_ROLES">
+            <column name="C_ROLE" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FK_USER_ID" type="int">
+                <constraints foreignKeyName="FK_USER_ROLES_TO_USER" nullable="false"
+                             referencedTableName="T_USER" referencedColumnNames="C_ID"
+                             initiallyDeferred="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

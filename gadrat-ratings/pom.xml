@@ -1,30 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <artifactId>gadrat-core</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0</version>
-    <modules>
-        <module>gr-core-api</module>
-        <module>gr-core-domain</module>
-    </modules>
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>gadget-rating</artifactId>
         <groupId>com.zurnachyan</groupId>
+        <artifactId>gadget-rating</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
+    <artifactId>gadrat-ratings</artifactId>
+    <packaging>pom</packaging>
+    <name>Archetype - gadrat-ratings</name>
+    <url>http://maven.apache.org</url>
+    <modules>
+        <module>gr-ratings-domain</module>
+        <module>gr-ratings-api</module>
+    </modules>
 
     <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
         <spring.version>2.7.5</spring.version>
         <lombok.version>1.18.24</lombok.version>
         <postgresql.jdbcdriver.version>42.3.8</postgresql.jdbcdriver.version>
-        <commons.io.version>2.7</commons.io.version>
     </properties>
 
     <dependencyManagement>
@@ -53,13 +47,6 @@
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
             </dependency>
-
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>${commons.io.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>
