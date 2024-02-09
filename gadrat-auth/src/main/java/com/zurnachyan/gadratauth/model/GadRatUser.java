@@ -1,4 +1,4 @@
-package com.zurnachyan.gadratauth.model.business;
+package com.zurnachyan.gadratauth.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

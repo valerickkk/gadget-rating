@@ -1,4 +1,4 @@
-package com.zurnachyan.gadratauth.model.business;
+package com.zurnachyan.gadratauth.model;
 
 import org.springframework.security.core.GrantedAuthority;
 
