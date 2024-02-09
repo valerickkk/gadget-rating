@@ -3,7 +3,7 @@ package com.zurnachyan.gadrat.entity.developers;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Base gadget developer company

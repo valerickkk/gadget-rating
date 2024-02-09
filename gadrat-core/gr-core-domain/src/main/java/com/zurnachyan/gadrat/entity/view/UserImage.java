@@ -4,8 +4,8 @@ package com.zurnachyan.gadrat.entity.view;
 import com.zurnachyan.gadrat.entity.abstractentity.AbstractImage;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Data
 @Entity

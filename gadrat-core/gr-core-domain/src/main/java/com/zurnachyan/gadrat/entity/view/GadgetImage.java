@@ -3,7 +3,7 @@ package com.zurnachyan.gadrat.entity.view;
 import com.zurnachyan.gadrat.entity.abstractentity.AbstractImage;
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Data
 @Entity

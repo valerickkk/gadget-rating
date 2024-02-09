@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/core")
-@CrossOrigin("http://localhost:3000/")
 public class PhoneController {
 
     private final PhoneService service;
